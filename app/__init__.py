@@ -9,25 +9,25 @@ from app.models import Videos
 
 migrate = Migrate()
 
-def create_app():
-    app = Flask(__name__)
+# def create_app():
+app = Flask(__name__)
 
-    app.register_blueprint(main_bp)
-    CORS(app=app, supports_credentials=True)
-    # app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024 * 1024
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  # Using SQLite
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.register_blueprint(main_bp)
+CORS(app=app, supports_credentials=True)
+# app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024 * 1024
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  # Using SQLite
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-    db.init_app(app)
-    migrate.init_app(app, db)
+db.init_app(app)
+migrate.init_app(app, db)
 
-    # Serve video file by filename
-    @app.route('/videos/<filename>')
-    def serve_video(filename):
-        return send_from_directory(UPLOAD_FOLDER, filename)
+# Serve video file by filename
+@app.route('/videos/<filename>')
+def serve_video(filename):
+    return send_from_directory(UPLOAD_FOLDER, filename)
 
-    @app.route('/', methods=['GET'])
-    def index():
-        return {'status': True, 'message': 'Index View'}, 200
+@app.route('/', methods=['GET'])
+def index():
+    return {'status': True, 'message': 'Index View'}, 200
 
-    return app
+    # return app
