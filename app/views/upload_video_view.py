@@ -59,7 +59,9 @@ def process_video_in_background(id):
                 video.status = "failed"
                 db.session.commit()
 
+        print("video uploaded successfully")
     except Exception as e:
+        print(str(e))
         return Exception(e)
 
 class VideoUploadView(MethodView):
