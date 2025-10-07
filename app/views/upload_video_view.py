@@ -42,7 +42,7 @@ def process_video_in_background(id):
                 return None
             video.status = "uploading"
             db.session.commit()
-            filepath = os.path.join(UPLOAD_FOLDER, video.filename)
+            filepath = os.path.join(UPLOAD_FOLDER, video.filepath)
             with open(filepath, "rb") as video_stream:
                 task = client.tasks.create(index_id=INDEX_ID, video_file=video_stream)
 
@@ -58,7 +58,6 @@ def process_video_in_background(id):
             else:
                 video.status = "failed"
                 db.session.commit()
-
         print("video uploaded successfully")
     except Exception as e:
         print(str(e))
