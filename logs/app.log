@@ -1,0 +1,42 @@
+2025-10-07 17:00:46,347 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-07 17:00:46,347 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-10-07 17:35:09,406 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-07 17:35:09,407 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-10-07 17:35:32,947 [INFO] werkzeug: 127.0.0.1 - - [07/Oct/2025 17:35:32] "GET /video-status/?video_id=6 HTTP/1.1" 200 -
+2025-10-07 17:36:04,262 [ERROR] app.views.upload_video_view: Exception occurred while processing video ID 5
+2025-10-07 17:36:04,263 [INFO] werkzeug: 127.0.0.1 - - [07/Oct/2025 17:36:04] "[35m[1mPOST /upload-file/ HTTP/1.1[0m" 201 -
+2025-10-07 17:37:13,394 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-07 17:37:13,394 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-10-07 17:37:18,506 [ERROR] app.views.upload_video_view: Exception occurred while processing video ID 6
+2025-10-07 17:37:18,511 [INFO] werkzeug: 127.0.0.1 - - [07/Oct/2025 17:37:18] "[35m[1mPOST /upload-file/ HTTP/1.1[0m" 201 -
+2025-10-07 17:38:00,952 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-07 17:38:00,952 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-10-07 17:38:04,813 [INFO] werkzeug: 127.0.0.1 - - [07/Oct/2025 17:38:04] "[35m[1mPOST /upload-file/ HTTP/1.1[0m" 201 -
+2025-10-07 17:38:04,844 [INFO] app.views.upload_video_view: Uploading video: D:\Projects_\Hackathon Challenge\hackathon_challenge_github\..\uploads\0ece5959-f07b-4055-bd86-21d840c2dcc8_Giorgio_Armani_-_2025_Fall_Winter_Advertising_Campaign.mp4
+2025-10-07 17:38:09,300 [INFO] httpx: HTTP Request: POST https://api.twelvelabs.io/v1.3/tasks "HTTP/1.1 201 Created"
+2025-10-07 17:38:09,599 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:15,465 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:15,467 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:38:21,282 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:21,284 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:38:27,086 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:27,091 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:38:32,919 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:32,920 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:38:38,792 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:38,795 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:38:44,608 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:44,611 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:38:50,553 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:51,012 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:38:56,974 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:38:56,978 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:39:02,855 [INFO] httpx: HTTP Request: GET https://api.twelvelabs.io/v1.3/tasks/68e502cd66ecb2513d7faf00 "HTTP/1.1 200 OK"
+2025-10-07 17:39:02,857 [INFO] app.views.upload_video_view: [7] Task status update: pending
+2025-10-07 17:39:10,954 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-10-07 17:39:10,954 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
