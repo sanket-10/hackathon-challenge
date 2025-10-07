@@ -42,8 +42,8 @@ def process_video_in_background(id):
                 return None
             video.status = "uploading"
             db.session.commit()
-
-            with open(video.filepath, "rb") as video_stream:
+            filepath = os.path.join(UPLOAD_FOLDER, video.filename)
+            with open(filepath, "rb") as video_stream:
                 task = client.tasks.create(index_id=INDEX_ID, video_file=video_stream)
 
             def on_task_update(task: TasksRetrieveResponse):
