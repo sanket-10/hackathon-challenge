@@ -19,7 +19,7 @@ wheels/
 .venv
 
 # env config
-.env
+#.env
 
 .idea
 /.idea
