@@ -29,3 +29,7 @@ def serve_video(filename):
 @app.route('/', methods=['GET'])
 def index():
     return {'status': True, 'message': 'Index View'}, 200
+
+
+if __name__ == "__main__":
+    app.run(debug=False, host='0.0.0.0', port=5000)

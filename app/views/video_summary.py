@@ -16,6 +16,6 @@ class VideoSummarizeView(MethodView):
                 # temperature= 0.2
                 )
 
-            return {'status':True, 'summary': res_summary.summary}
+            return {'status':True, 'summary': res_summary.summary}, 200
         except Exception as e:
-            return {'error':str(e)}
+            return {'error':str(e)}, 400

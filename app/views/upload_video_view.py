@@ -6,6 +6,7 @@ from twelvelabs.tasks import TasksRetrieveResponse
 from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
 import uuid
+from datetime import datetime
 import threading
 from app.models import Videos
 from app.db import db
@@ -39,6 +40,8 @@ video_status = {}  # Format: {video_id: {"status": "pending", "task_id": None}}
 # TwelveLabs setup
 API_KEY = os.getenv("TWELVELABS_API_KEY")  # Add this to your .env
 INDEX_ID = os.getenv("TWELVELABS_INDEX_ID")  # Add this to your .env
+logger.info(f"API_KEYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY: {API_KEY}")
+logger.info(f"INDEX_IDYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY: {INDEX_ID}")
 client = TwelveLabs(api_key=API_KEY)
 
 # Set the upload folder
@@ -110,11 +113,12 @@ class VideoUploadView(MethodView):
                 video_uuid = str(uuid.uuid4())
                 save_path = os.path.join(UPLOAD_FOLDER, f"{video_uuid}_{filename}")
                 file.save(save_path)
-
+                uploaded_time = datetime.now()
                 video = Videos(
                     title=filename,
                     filepath=f"{video_uuid}_{filename}",
                     status='pending',
+                    created_at=uploaded_time,
                     # video_index_id=some_id  # <- Add this if it's required
                 )
 
@@ -126,6 +130,8 @@ class VideoUploadView(MethodView):
                 return jsonify({
                     "message": "Video uploaded successfully.",
                     "video_id": video.id,
+                    'title': filename,
+                    'date_uploaded':uploaded_time,
                     "status": "pending"
                 }), 201
             logger.warning("Unsupported file type uploaded.")
@@ -133,5 +139,5 @@ class VideoUploadView(MethodView):
 
         except Exception as e:
             logger.exception("Exception occurred during video upload.")
-            return jsonify({'error': str(e)}), 500
+            return jsonify({'error': str(e)}), 400
 

@@ -26,6 +26,7 @@ class ListVideosView(MethodView):
                 videos_list.append({'video_id': video.id,
                                     'status': video.status,
                                     'title': video.title,
+                                    'date_uploaded': video.created_at,
                                     })
             return {'status': True, 'videos_list': videos_list}, 200
         except Exception as e:
