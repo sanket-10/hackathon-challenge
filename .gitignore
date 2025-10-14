@@ -23,8 +23,8 @@ wheels/
 
 .idea
 /.idea
-migrations
-instance/database.db
-/instance/*
-/instance/database.db
-database.db
+# migrations
+# instance/database.db
+# /instance/*
+# /instance/database.db
+# database.db
