@@ -5,6 +5,12 @@ from flask_migrate import Migrate
 from app.views.get_video_files import UPLOAD_FOLDER
 from app.db import db
 from app.models import Videos
+from dotenv import load_dotenv
+import os
+
+
+
+load_dotenv()
 
 
 migrate = Migrate()
@@ -15,7 +21,7 @@ app = Flask(__name__)
 app.register_blueprint(main_bp)
 CORS(app=app, supports_credentials=True)
 # app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024 * 1024
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'  # Using SQLite
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)

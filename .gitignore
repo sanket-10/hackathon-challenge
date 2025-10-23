@@ -28,3 +28,4 @@ instance/database.db
 /instance/*
 /instance/database.db
 database.db
+/migrations
