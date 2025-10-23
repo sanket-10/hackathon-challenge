@@ -23,9 +23,17 @@ wheels/
 
 .idea
 /.idea
+<<<<<<< HEAD
 migrations
 instance/database.db
 /instance/*
 /instance/database.db
 database.db
 /migrations
+=======
+# migrations
+# instance/database.db
+# /instance/*
+# /instance/database.db
+# database.db
+>>>>>>> 3e2e52a31c91049e4cba1048dda3cc37c1952d46
